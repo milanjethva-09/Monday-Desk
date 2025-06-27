@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return redirect('/login');
+    return view('welcome');
 });
 
 Auth::routes();
