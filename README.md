@@ -11,9 +11,12 @@ This project is a minimal Laravel 12 application for tracking products and order
 ## Deployment on Hostinger
 1. Upload the entire project via FTP or SSH.
 2. Move all contents of the `public_html` directory to the hosting `public_html` folder.
-3. Give write permissions to `storage/` and `bootstrap/cache`.
-4. Copy `.env.example` to `.env` and update database credentials.
-5. Run `php artisan migrate` from the project root using SSH.
+3. Give write permissions to `storage/` and `bootstrap/cache` using:
+   `chmod -R 775 storage` and `chmod -R 775 bootstrap/cache`.
+4. Copy `.env.example` to `.env` and update the database credentials provided by Hostinger.
+   Ensure `APP_ENV=production` and `APP_DEBUG=false`.
+5. Run `composer install --no-dev` if vendor files are not uploaded.
+6. Run `php artisan migrate` from the project root using SSH.
 
 ## Local Setup
 1. Install PHP 8.1+ and Composer.

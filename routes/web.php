@@ -10,6 +10,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Disable registration in single-user mode
+Route::get('/register', function () {
+    abort(404);
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
